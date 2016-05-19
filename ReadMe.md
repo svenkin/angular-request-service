@@ -3,9 +3,9 @@ Add the following module as dependency: ```'angular-request-service'```
 
 ### requestServiceProvider
 The modules exposes following Provider to set base Settings:
-```requestServiceProvider.setBaseUrl("http://musterseite.com");```-> Set the baseUrl of all requests
+```requestServiceProvider.setBaseUrl("http://musterseite.com");``` --> Set the baseUrl of all requests
 
-```requestServiceProvider.defaultCaching(true);```-> Set the defaultCaching (if nothing is set defaultCaching is true)
+```requestServiceProvider.defaultCaching(true);``` --> Set the defaultCaching (if nothing is set defaultCaching is true)
 
 **If the url you want to use is another then the baseUrl+your url then simply but an ```!!``` in front of your url and it wont add the baseUrl**
 
@@ -27,8 +27,9 @@ Caching is only available for get Requests !!!
 **RequestService.delete(url,config)**:
 * url: baseUrl from Provider + url given via param
 * force: if force is true data will be fetched from server not from cache
-* 
+
 ### Examples
+
 ##### Get
 
 Url resolves to ```http://www.amazon.de``` even if url is set something else in the provider.
