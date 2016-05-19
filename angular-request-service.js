@@ -17,17 +17,18 @@ angular.module('angular-request-service', [])
     })
     .factory('RequestService', function ($q, $http, requestService) {
         var service = {};
-        var baseConfig = {
-            cache: requestService.defaultCaching
-        }
+        var baseConfig = function () {};
+        baseConfig.prototype.cache = requestService.defaultCaching
 
         function mergeConfigs(config, force) {
-            var newConfig = baseConfig;
+            var newConfig = {};
             angular.forEach(config, function (value, key) {
                 newConfig[key] = value;
             });
             if (force === true) {
                 newConfig.cache = false;
+            } else {
+                newConfig.cache = new baseConfig().cache;
             }
             return newConfig;
         }
@@ -43,6 +44,7 @@ angular.module('angular-request-service', [])
         }
         service.get = function (url, config, force) {
             var q = $q.defer();
+            console.log(mergeConfigs(config, force));
             $http.get(checkUrl(url), mergeConfigs(config, force)).then(function (suc) {
                 q.resolve(suc);
             }, function (err) {
