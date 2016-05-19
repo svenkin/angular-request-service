@@ -1,0 +1,11 @@
+{
+  "name": "angular-request-service",
+  "main": "angular-request-service.js",
+  "homepage": "https://github.com/svenkin/angular-request-service",
+  "authors": [
+    "Sven Kinzel <sven@hegerkinzel.de>"
+  ],
+  "description": "Request service base on angulars $http",
+  "moduleType": [],
+  "license": "MIT"
+}
